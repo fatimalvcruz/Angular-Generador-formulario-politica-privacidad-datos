@@ -1,0 +1,210 @@
+
+
+<div class="wrapper">
+
+
+    <main role="main" class="main">
+
+
+     <!--  Show HTML: <input type="checkbox" [(ngModel)]="myVar">
+
+      <div ng-show="myVar">
+      <h1>Welcome</h1>
+      <p>Welcome to my home.</p>
+      </div>
+ -->
+
+
+
+
+        <div class="first_box">
+          <div class="blue_box">
+            <p> Introduzca sus datos:</p>
+          </div>
+          <div class="input_box">
+            <p> URL o página web</p>
+            <input id="first-input" type="url" name="url" placeholder="Ej. Hola.es" [(ngModel)]="url">
+            <label for="url"></label>
+          </div>
+          
+          <div class="input_box">
+            <p> Indique la denominación o nombre de uso corriente o más común del sitio web:</p>
+            <input id="first-input" type="text" name="sitioweb" placeholder="Ej. Hola Gestión y formación" [(ngModel)]="sitioweb">
+            <label for="sitioweb"></label>
+            {{fisico}}
+          </div>
+
+          <div class="radioBox" >
+
+            <p > El responsable del fichero de datos personales recogidos de usuarios es:</p>
+          
+          <div class="radio-content">
+            <input  class="uno"   type="radio" name="fisio" value="si" [checked]="fisico"  (click)=" setTipoEmpresa($event)"  >  
+            <label for="fisio" >  Una persona fisica </label>
+        
+            <input id="dos"  type="radio" name="fisio"  value="no"   [checked]="juridico"  (click)="setTipoEmpresa($event)">
+            <label for="fisio">Una persona juridica</label>
+          </div>
+
+
+            <!-- <p> Donde corresponda{{textoFisico}}</p>   -->
+          </div>
+
+          <div class="persona" *ngIf="fisico == true" >
+            <div class="input_box">
+              <p> Nombre completo del responsable del fichero de datos personales recogidos de usuarios:</p>
+              <input id="first-input" type="text" name="responsableFichero" placeholder="Ej. Nombre  Apellido Apellido" [(ngModel)]="responsableFichero">
+              <label for="responsableFichero"></label>
+            </div>
+            <div class="input_box">
+              <p> NIF (DNI o NIE) del responsable del fichero de datos personales recogidos de usuarios:</p>
+              <input id="first-input" type="text" name="dniResponsableFichero" placeholder="Ej. Nombre  000000000X" [(ngModel)]="dniResponsableFichero">
+              <label for="dniResponsableFichero"></label>
+            </div> 
+
+          </div>
+
+          <div class="empresa" *ngIf="juridico == true">
+            <div class="input_box">
+              <p> Denominación o razón social del responsable del fichero de datos personales recogido de usuarios:</p>
+              <input id="first-input" type="text" name="razonSocial" placeholder="Ej. Nombre  Apellido Apellido" [(ngModel)]="razonSocial">
+              <label for="razonSocial"></label>
+            </div>
+  
+             <div class="input_box">
+              <p> NIF/CIF del responsable del fichero de datos personales recogidos de usuarios:</p>
+              <input id="first-input" type="text" name="cifResponsableFichero" placeholder="Ej. Nombre  000000000X" [(ngModel)]="cifResponsableFichero">
+              <label for="cifResponsableFichero"></label>
+            </div>
+  
+             <div class="input_box">
+              <p>Nombre completo del tipo de Registro y lugar donde está registrado el responsable del fichero de datos personales recogidos de usuarios:</p>
+              <input id="first-input" type="text" name="tipoRegistro" placeholder="Ej. Nombre  Apellido Apellido" [(ngModel)]="tipoRegistro">
+              <label for="tipoRegistro"></label>
+            </div>
+  
+              <div class="input_box">
+              <p>Datos registrales completos del responsable del fichero de datos personales recogidos de usuarios</p>
+              <input id="first-input" type="text" name="datosRegistrales" placeholder="Ej. Nombre  Apellido Apellido" [(ngModel)]="datosRegistrales">
+              <label for="datosRegistrales"></label>
+            </div>
+            <div class="input_box">
+              <p> Nombre completo del responsable del fichero de datos personales recogidos de usuarios:</p>
+              <input id="first-input" type="text" name="responsableFichero" placeholder="Ej. Nombre  Apellido Apellido" [(ngModel)]="responsableFichero">
+              <label for="responsableFichero"></label>
+            </div>
+          </div>
+
+          <div class="input_box">
+            <p> Dirección completa del/los responsable(s) del fichero de daros personales recogidos de usuarios:</p>
+            <input id="first-input" type="text" name="direccionResponsableFichero" placeholder="Ej. C/ Cualquiera 30, 29017 Málaga" [(ngModel)]="direccionResponsableFichero">
+            <label for="direccionResponsableFichero"></label>
+          </div>
+
+          <div class="input_box">
+            <p>Número(s) de teléfono del/los responsable(s) del fichero de daros personales recogidos de usuarios:</p>
+            <input id="first-input" type="text" name="telefonoResponsableFichero" placeholder="Ej. 999999999" [(ngModel)]="telefonoResponsableFichero">
+            <label for="telefonoResponsableFichero"></label>
+          </div>
+
+          <div class="input_box">
+            <p>(Opcional) Número de fax del/los responsable(s) del fichero de daros personales recogidos de usuarios:</p>
+            <input id="first-input" type="text" name="faxResponsableFichero" placeholder="Ej. 999999999" [(ngModel)]="faxResponsableFichero">
+            <label for="faxResponsableFichero"></label>
+          </div>
+
+          <div class="input_box">
+            <p>(Opcional) Número de fax del/los responsable(s) del fichero de daros personales recogidos de usuarios:</p>
+            <input id="first-input" type="email" name="email" placeholder="Ej. contacto@loquesea.es" [(ngModel)]="email">
+            <label for="email"></label>
+          </div>
+
+
+        
+
+          <div class="radioBox" >
+            <p>Los datos personales recogidos de usuario son:</p>
+            <div class="radio-content">
+              <input  type="radio" name="datos" value="si" [checked]="datos"  (click)="setTipodatos($event)">
+              <label for="datos">  únicamente datos identificativos (nombre, apellido, número de teléfono, correo electrónico, etc.)   </label>
+            <br>
+            <br>
+              <input  type="radio" name="datos"  value="no" (click)="setTipodatos($event)"> 
+              <label for="datos"> datos identificativos y datos personales sensibles o epecialmente protegidos (ej. origen étnico o racial, opiniones políticas, convicciones religioas o filosóficas, afiliación sindical, datos genéricos, datos biométricos, datos de salud)</label>
+            <!-- <p> Donde corresponda {{textoDatos}}</p> -->
+          </div>
+          </div>
+
+          <div class="input_box">
+            <p>¿Durante cuanto tiempo serán conservados los datos personales recogidos de usuarios (en "meses", "años", etc.)?</p>
+            <input id="first-input" type="text" name="tiempoConservar" placeholder="Ej. 15 meses" [(ngModel)]="tiempoConservar">
+            <label for="tiempoConservar"></label>
+          </div>
+
+           <div class="radioBox" >
+            <p>Los datos personales recogidos de usuarios:</p>
+            <div class="radio-content">
+              <input  type="radio" name="tipodatos" value="si" [checked]="usoDatos"  (click)="setTipoUsoDatos($event)"> 
+              <label for="tipodatos"> Serán compartidos con otras personas o empresas (ej. Google, Google Analitycs, empresa que realiza el servicio del hosting)</label>
+              <br>
+              <input  type="radio" name="tipodatos"  value="no" (click)="setTipoUsoDatos($event)">
+              <label for="tipodatos">   no serán compartidos con otras personas o empresas</label>
+            </div>
+         
+            <!-- <p> Donde corresponda {{textoUsoDatos}}</p> -->
+          </div>
+
+         <div class="input_box"  *ngIf="usoDatos == true">
+            <p>Nombre completo o denominación social y domicilio completo de la(s) persona(s) o empresa(s) con las que serán compartidos los datos personales recogidos de usuarios:</p>
+
+            <textarea  class="textarea" name="nombreDatos" id="" cols="30" rows="10" placeholder="Ej. Lo que sea Data S.L. con domicilio en Calle otracalle 15, 06800 Mérida, Badajoz" [(ngModel)]="nombreDatos"></textarea>
+ 
+          </div> 
+
+          <div class="input_checkBox">
+            <input  type="checkbox" name="ssl" value="si" (click)="setcertificadoSsl($event)"> 
+            <label for="ssl">
+              Marque la casilla si el sitio web cuenta con un certificado SSL (Secure Socket Layer)
+              que garantiza que los datos personales recogidos de usuarios se transmiten de forma segura y confidencial:
+            </label>
+<!-- 
+           <p>Donde corresponda{{ textoCertificadoSsl}}</p> -->
+          </div>
+    
+
+        </div>
+        <div class="botonCopiar">
+          <button >Copiar la política del sitio</button>
+        </div>
+
+
+
+       
+        
+
+
+        <div class="second_box">
+
+          <div class="main-content-second-box">
+            <div class="header-second-box">
+              <h2>POLÍTICA DE PRIVACIDAD DEL SITIO WEB</h2>
+              <h4>
+                <span class="agrega-tex">{{url}}</span>
+              </h4>
+            </div>
+
+            <div class="body-second-box">
+              <h3>I. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS</h3>
+              <P>Respetando lo establecido en la legislación vigente, <span class="agrega-tex"></span> (en adelante, también Sitio Web) 
+                se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos.</P>
+          </div>
+
+          
+
+          </div>
+
+            
+       
+        </div>
+    </main>
+</div>
