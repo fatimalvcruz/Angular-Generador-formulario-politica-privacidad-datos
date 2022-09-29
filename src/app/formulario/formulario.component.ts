@@ -31,20 +31,19 @@ export class FormularioComponent implements OnInit {
   cifResponsableFichero: string = ""; 
   tipoRegistro: string = ""; 
   datosRegistrales:string ="";
+  ssl:boolean = false;
+  fecha : Date = new Date();
+
+
+ 
  
 
-
-
-
-
-
+ 
   setcertificadoSsl(event:Event){
 
     if((<HTMLInputElement>event.target).value=="si" ){
    this.textoCertificadoSsl = ' Una persona física';
-
-   
-  
+   this.ssl = true;
     } 
 
   } 
@@ -56,7 +55,6 @@ export class FormularioComponent implements OnInit {
         this.textoFisico = ' Una persona física';
         this.fisico = true;
         this.juridico = false;
-   
 
     } else {
         this.textoFisico = ' Una persona jurídica (ej. sociedad, asociación)';
@@ -74,7 +72,7 @@ export class FormularioComponent implements OnInit {
 
     } else {
       this.textoDatos = 'datos identificativos y datos personales sensibles o epecialmente protegidos (ej. origen étnico o racial, opiniones políticas, convicciones religioas o filosóficas, afiliación sindical, datos genéricos, datos biométricos, datos de salud)';
-
+      this.datos = true;
     }
 
   } 
@@ -91,9 +89,6 @@ export class FormularioComponent implements OnInit {
     }
 
   }
-
-
-
 
 
   constructor() { }
