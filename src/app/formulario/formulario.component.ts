@@ -34,8 +34,19 @@ export class FormularioComponent implements OnInit {
   ssl:boolean = false;
   fecha : Date = new Date();
 
+  copiar: any = document.getElementById('copiaRespuesta');
+
+
+
+
+
+
+
+
 
  
+ 
+
  
 
  
@@ -97,3 +108,7 @@ export class FormularioComponent implements OnInit {
   }
 
 }
+function execomand() {
+  throw new Error('Function not implemented.');
+}
+
